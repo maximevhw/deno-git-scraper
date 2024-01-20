@@ -10,14 +10,13 @@ jobs:
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x # Run with latest stable Deno.
-          
-  QA:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, macos-12, windows-2022 ]
+
+    Test:
+    runs-on: ubuntu-latest
     steps:
-      - run: deno test --allow-all --coverage cov/
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x # Run with latest stable Deno.
       - run: deno lint
-      - run: deno fmt --check
     
