@@ -20,8 +20,8 @@ jobs:
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x # Run with latest stable Deno.
-      - run: deno compile --output scraper-linux --allow-read --allow-net git-scraper.ts
+      - run: deno compile --output executable --allow-read --allow-net git-scraper.ts
       - uses: actions/upload-artifact@v2
         with:
           name: my-executable
-          path: home/runner/work/deno-git-scraper/deno-git-scraper/scraper-linux
+          path: $PWD/executable
