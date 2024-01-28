@@ -21,4 +21,7 @@ jobs:
         with:
           deno-version: v1.x # Run with latest stable Deno.
       - run: deno compile --allow-read --allow-net git-scraper.ts
-    
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-executable
+          path: home/runner/work/deno-git-scraper/deno-git-scraper/git-scraper
