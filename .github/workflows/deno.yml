@@ -12,7 +12,7 @@ jobs:
           deno-version: v1.x # Run with latest stable Deno.
       - run: deno lint
 
-  Compile:
+  Compile-Linux:
     needs: Test
     runs-on: ubuntu-latest
     steps:
